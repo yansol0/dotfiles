@@ -210,6 +210,11 @@ _G.packer_plugins = {
     path = "/Users/solo/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
   },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/Users/solo/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
   ["vim-transparent"] = {
     loaded = true,
     path = "/Users/solo/.local/share/nvim/site/pack/packer/start/vim-transparent",
