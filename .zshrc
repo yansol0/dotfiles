@@ -113,10 +113,6 @@ alias copy='xclip -sel clip'
 
 bindkey -s ^f "~/scripts/tmux-sessioniser\n"
 
-
-source $(brew --prefix nvm)/nvm.sh
-
-
 # bun completions
 [ -s "/Users/solo/.bun/_bun" ] && source "/Users/solo/.bun/_bun"
 
