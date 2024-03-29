@@ -47,6 +47,12 @@ return require('packer').startup(function(use)
   }
   use("eandrju/cellular-automaton.nvim")
   use("fatih/vim-go")
-  use("christoomey/vim-tmux-navigator")
+  use {
+      "windwp/nvim-autopairs",
+      event = "InsertEnter",
+      config = function()
+          require("nvim-autopairs").setup {}
+      end
+  } use("christoomey/vim-tmux-navigator")
 
 end)
