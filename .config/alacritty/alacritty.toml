@@ -28,3 +28,5 @@ y = 0
 action = "PasteSelection"
 mouse = "Middle"
 
+[window]
+decorations = "none"
