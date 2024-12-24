@@ -28,3 +28,5 @@ gsettings set org.gnome.shell.keybindings switch-to-application-8 "['<Alt>8']"
 gsettings set org.gnome.shell.keybindings switch-to-application-9 "['<Alt>9']"
 
 gsettings set org.gnome.mutter center-new-windows true
+
+gsettings set org.gnome.desktop.interface monospace-font-name 'CaskaydiaMono Nerd Font 10'

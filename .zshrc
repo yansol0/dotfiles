@@ -120,8 +120,9 @@ bindkey -s ^f "~/scripts/tmux-sessioniser\n"
 export BUNPATH="$HOME/.bun"
 export GOPATH=$HOME/go
 export GOMODCACHE=$GOPATH/pkg/mod
+export CARGOPATH=$HOME/.cargo/bin
 
-export PATH="$BUNPATH:$GOMODCACHE:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export PATH="$BUNPATH:$GOMODCACHE:$CARGOPATH:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
