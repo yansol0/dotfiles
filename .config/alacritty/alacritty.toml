@@ -31,5 +31,5 @@ startup_mode = "Maximized"
 
 [general]
 import = [
-  "~/.config/alacritty/catppuccin-macchiato.toml"
+  "~/.config/alacritty/themes/dracula.toml"
 ]
