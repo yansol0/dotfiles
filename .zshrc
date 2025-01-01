@@ -112,6 +112,8 @@ alias tmux-sessioniser="~/scripts/tmux-sessioniser"
 alias copy='xclip -sel clip'
 
 bindkey -s ^f "~/scripts/tmux-sessioniser\n"
+bindkey "^[[5~" history-beginning-search-backward
+bindkey "^[[6~" history-beginning-search-forward
 
 # bun completions
 [ -s "/Users/solo/.bun/_bun" ] && source "/Users/solo/.bun/_bun"
