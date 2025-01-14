@@ -110,6 +110,7 @@ alias vim="nvim"
 alias chtsh="~/scripts/cht.sh"
 alias tmux-sessioniser="~/scripts/tmux-sessioniser"
 alias copy='xclip -sel clip'
+alias blind_payload="cat ~/hacking/blind_xss_payload.txt"
 
 bindkey -s ^f "~/scripts/tmux-sessioniser\n"
 bindkey "^[[5~" history-beginning-search-backward
@@ -132,3 +133,13 @@ export PATH="$BUNPATH:$GOMODCACHE:$CARGOPATH:/usr/local/go/bin:/usr/local/sbin:/
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+function set_screen_brightness_contrast() {
+    ddcutil --bus=6 setvcp 10 85   
+    ddcutil --bus=6 setvcp 12 82   
+
+    ddcutil --bus=7 setvcp 12 82   
+    ddcutil --bus=7 setvcp 10 85   
+}
+
+set_screen_brightness_contrast

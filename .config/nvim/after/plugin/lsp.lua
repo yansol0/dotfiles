@@ -6,7 +6,8 @@ lsp.ensure_installed({
     'ts_ls',
     'rust_analyzer',
     'volar',
-    'prismals'
+    'prismals',
+    'svelte'
 })
 
 lsp.nvim_workspace()
@@ -56,3 +57,19 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
+
+local M = {}
+M.setup = function(on_attach, capabilities)
+    local lspconfig = require("lspconfig")
+
+    lspconfig.graphql.setup({
+        on_attach = on_attach,
+        root_dir = lspconfig.util.root_pattern(".graphqlconfig", ".graphqlrc", "package.json"),
+        flags = {
+            debounce_text_changes = 150,
+        },
+        capabilities = capabilities,
+    })
+end
+
+return M
