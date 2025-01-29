@@ -143,3 +143,6 @@ function set_screen_brightness_contrast() {
 }
 
 set_screen_brightness_contrast
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform

@@ -61,6 +61,7 @@ return require('packer').startup(function(use)
         config = function()
             require("nvim-autopairs").setup {}
         end
-    } use("christoomey/vim-tmux-navigator")
-
+    }
+    use("christoomey/vim-tmux-navigator")
+    use(" gitsigns.nvim")
 end)

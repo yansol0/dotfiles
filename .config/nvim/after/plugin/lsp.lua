@@ -58,18 +58,34 @@ vim.diagnostic.config({
     virtual_text = true
 })
 
-local M = {}
-M.setup = function(on_attach, capabilities)
-    local lspconfig = require("lspconfig")
+local lspconfig = require('lspconfig')
+local mason_registry = require('mason-registry')
+local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
 
-    lspconfig.graphql.setup({
-        on_attach = on_attach,
-        root_dir = lspconfig.util.root_pattern(".graphqlconfig", ".graphqlrc", "package.json"),
-        flags = {
-            debounce_text_changes = 150,
-        },
-        capabilities = capabilities,
-    })
-end
+lspconfig.ts_ls.setup {
+  init_options = {
+    plugins = {
+      {
+        name = '@vue/typescript-plugin',
+        location = vue_language_server_path,
+        languages = { 'vue' },
+      },
+    },
+  },
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+}
 
-return M
+-- No need to set `hybridMode` to `true` as it's the default value
+lspconfig.volar.setup {
+    on_attach = function(client, bufnr)
+        client.server_capabilities.documentFormattingProvider = false
+    end
+}
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.vue", "*.ts", "*.js" },
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+})
+
