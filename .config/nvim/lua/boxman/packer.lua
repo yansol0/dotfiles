@@ -63,5 +63,5 @@ return require('packer').startup(function(use)
         end
     }
     use("christoomey/vim-tmux-navigator")
-    use(" gitsigns.nvim")
+    use("lewis6991/gitsigns.nvim")
 end)

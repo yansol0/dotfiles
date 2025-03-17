@@ -1,0 +1,1 @@
+scripts/set-gnome-extensions.sh

@@ -1,0 +1,32 @@
+let mapleader=" "
+
+set surround
+set incsearch
+set relativenumber
+set number 
+
+nnoremap J mzJ`z
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap <leader>Y "+Y
+nnoremap <C-k> :action NextOccurence<CR>zz
+nnoremap <C-j> :action PreviousOccurence<CR>zz
+nnoremap <leader>k :action GotoNextError<CR>zz
+nnoremap <leader>j :action GotoPreviousError<CR>zz
+nnoremap <leader>f :action Javascript.Linters.EsLint.Fix<CR>
+vnoremap J :action MoveLineDown<CR>
+vnoremap K :action MoveLineUp<CR>
+vnoremap <leader>p "_dP
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+nmap <leader>t <Action>(ActivateTerminalToolWindow)
+
+nnoremap \e :e ~/.ideavimrc
+nnoremap \r :source ~/.ideavimrc
+
+nnoremap <leader>s yiw :%s/<C-r>0/<C-r>0/gI<Left><Left><Left>
