@@ -121,7 +121,7 @@ bindkey "^[[6~" history-beginning-search-forward
 
 # bun
 export BUNPATH="$HOME/.bun"
-export GOPATH=$HOME/go
+export GOPATH=$HOME/go/bin
 export GOMODCACHE=$GOPATH/pkg/mod
 export CARGOPATH=$HOME/.cargo/bin
 
@@ -133,16 +133,6 @@ export PATH="$BUNPATH:$GOMODCACHE:$CARGOPATH:/usr/local/go/bin:/usr/local/sbin:/
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-function set_screen_brightness_contrast() {
-    ddcutil --bus=6 setvcp 10 85   
-    ddcutil --bus=6 setvcp 12 82   
-
-    ddcutil --bus=7 setvcp 12 82   
-    ddcutil --bus=7 setvcp 10 85   
-}
-
-set_screen_brightness_contrast
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
