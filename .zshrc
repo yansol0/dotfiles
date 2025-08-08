@@ -121,7 +121,7 @@ bindkey "^[[6~" history-beginning-search-forward
 
 # bun
 export BUNPATH="$HOME/.bun"
-export GOPATH=$HOME/go/bin
+export GOPATH=$HOME/go
 export GOMODCACHE=$GOPATH/pkg/mod
 export CARGOPATH=$HOME/.cargo/bin
 
