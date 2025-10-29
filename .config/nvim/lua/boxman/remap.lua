@@ -2,6 +2,8 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>su", "<cmd>%sort u<CR>", { silent = true, desc = "Sort unique buffer" })
+vim.keymap.set("n", "<leader>sn", "<cmd>%!sort -t'[' -k2 -n<CR>", { silent = true, desc = "Sort ffufx buffer by status code" })
+
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")

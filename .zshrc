@@ -109,8 +109,10 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 alias chtsh="~/scripts/cht.sh"
 alias tmux-sessioniser="~/scripts/tmux-sessioniser"
-alias copy='xclip -sel clip'
+alias copy='/home/solo/scripts/copy.sh'
+alias pasta='/home/solo/scripts/pasta.sh'
 alias blind_payload="cat ~/hacking/blind_xss_payload.txt"
+alias gdbp="gdb-pwndbg"
 
 bindkey -s ^f "~/scripts/tmux-sessioniser\n"
 bindkey "^[[5~" history-beginning-search-backward
@@ -133,6 +135,21 @@ export PATH="$GOPATH:$GOPATH/bin:$BUNPATH:$CARGOPATH:/usr/local/go/bin:/usr/loca
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+mkcd () {
+  \mkdir -p "$1"
+  cd "$1"
+}
+
+tempe () {
+  cd "$(mktemp -d)"
+  chmod -R 0700 .
+  if [[ $# -eq 1 ]]; then
+    \mkdir -p "$1"
+    cd "$1"
+    chmod -R 0700 .
+  fi
+}
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
