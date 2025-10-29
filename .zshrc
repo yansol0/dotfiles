@@ -113,6 +113,7 @@ alias copy='/home/solo/scripts/copy.sh'
 alias pasta='/home/solo/scripts/pasta.sh'
 alias blind_payload="cat ~/hacking/blind_xss_payload.txt"
 alias gdbp="gdb-pwndbg"
+alias cpwd="/home/solo/scripts/cpwd.sh"
 
 bindkey -s ^f "~/scripts/tmux-sessioniser\n"
 bindkey "^[[5~" history-beginning-search-backward
